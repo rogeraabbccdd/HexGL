@@ -109,7 +109,32 @@ bkcore.hexgl.tracks.Cityscape = {
 						src: 'audio/wind.ogg',
 						loop: true,
 						usePanner: true
-					}
+					},
+					s3: {
+						src: 'audio/s3.ogg',
+						loop: false,
+						usePanner: true
+					},
+					s2: {
+						src: 'audio/s2.ogg',
+						loop: false,
+						usePanner: true
+					},
+					s1: {
+						src: 'audio/s1.ogg',
+						loop: false,
+						usePanner: true
+					},
+					start: {
+						src: 'audio/start.ogg',
+						loop: false,
+						usePanner: true
+					},
+					clear: {
+						src: 'audio/clear.ogg',
+						loop: false,
+						usePanner: true
+					},
 				}
 			});
 		}
@@ -188,7 +213,27 @@ bkcore.hexgl.tracks.Cityscape = {
 					wind: {
 						src: 'audio/wind.ogg',
 						loop: true
-					}
+					},
+					s3: {
+						src: 'audio/s3.ogg',
+						loop: false,
+					},
+					s2: {
+						src: 'audio/s2.ogg',
+						loop: false,
+					},
+					s1: {
+						src: 'audio/s1.ogg',
+						loop: false,
+					},
+					start: {
+						src: 'audio/start.ogg',
+						loop: false,
+					},
+					clear: {
+						src: 'audio/clear.ogg',
+						loop: false,
+					},
 				}
 			});
 		}

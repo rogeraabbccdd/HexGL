@@ -70,6 +70,7 @@ bkcore.hexgl.Gameplay = function(opts)
 			if(self.lap == this.maxLaps)
 			{
 				self.end(self.results.FINISH);
+				bkcore.Audio.play('clear');
 			}
 			else
 			{
@@ -78,6 +79,8 @@ bkcore.hexgl.Gameplay = function(opts)
 
 				if(self.lap == self.maxLaps)
 					self.hud != null && self.hud.display("Final lap", 0.5);
+				else
+					self.hud.display("LAP "+self.lap, 0.5);
 			}
 		}
 		else if(cp != -1 && cp != self.previousCheckPoint)
@@ -107,7 +110,7 @@ bkcore.hexgl.Gameplay.prototype.simu = function()
 {
 	this.lapTimes = [92300, 91250, 90365];
 	this.finishTime = this.lapTimes[0]+this.lapTimes[1]+this.lapTimes[2];
-	if(this.hud != null) this.hud.display("Finish");
+	if(this.hud != null)	this.hud.display("Finish");
 	this.step = 100;
 	this.result = this.results.FINISH;
 	this.shipControls.active = false;
@@ -186,20 +189,24 @@ bkcore.hexgl.Gameplay.prototype.update = function()
 	{
 		if(this.hud != null) this.hud.display("3");
 		this.step = 1;
+		bkcore.Audio.play('s3');
 	}
 	else if(this.step == 1 && this.timer.time.elapsed >= 2*this.countDownDelay+this.startDelay)
 	{
 		if(this.hud != null) this.hud.display("2");
+		bkcore.Audio.play('s2');
 		this.step = 2;
 	}
 	else if(this.step == 2 && this.timer.time.elapsed >= 3*this.countDownDelay+this.startDelay)
 	{
 		if(this.hud != null) this.hud.display("1");
+		bkcore.Audio.play('s1');
 		this.step = 3;
 	}
 	else if(this.step == 3 && this.timer.time.elapsed >= 4*this.countDownDelay+this.startDelay)
 	{
 		if(this.hud != null) this.hud.display("Go", 0.5);
+		bkcore.Audio.play('start');
 		this.step = 4;
 		this.timer.start();
 		
